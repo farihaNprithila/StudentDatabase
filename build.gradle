@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'war'
+    id "org.gretty" version "3.0.4"
+}
+
+group 'com.prithila'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.2.15.RELEASE'
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.2.15.RELEASE'
+
+    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.3.9.RELEASE'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.2.Final'
+    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.5.2.Final'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+
+    providedCompile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
+
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+    implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.46'
+
+
+}
