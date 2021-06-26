@@ -23,7 +23,7 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/postgres"/>
+        <property name="url" value="jdbc:mysql://localhost:3307/studentdatabase"/>
         <property name="username" value="root"/>
         <property name="password" value="123456789"/>
     </bean>
@@ -36,7 +36,7 @@
         </property>
         <property name="jpaProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
