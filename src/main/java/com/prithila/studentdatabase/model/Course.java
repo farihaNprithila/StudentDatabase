@@ -19,7 +19,7 @@ public class Course {
     @Column
     private String courseName;
 
-    @ManyToMany(mappedBy = "course_id")
+    @ManyToMany(mappedBy = "courseList")
     private List<Student> studentList;
 
     public Course() {
