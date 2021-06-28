@@ -20,6 +20,8 @@ dependencies {
     implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.2.Final'
     implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.5.2.Final'
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+    implementation group: 'org.springframework', name: 'spring-orm', version: '5.2.15.RELEASE'
+
 
     providedCompile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.3'
 
