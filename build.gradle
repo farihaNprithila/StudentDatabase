@@ -31,3 +31,7 @@ dependencies {
     implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '9.0.46'
 
 }
+
+gretty {
+    contextPath = ""
+}
