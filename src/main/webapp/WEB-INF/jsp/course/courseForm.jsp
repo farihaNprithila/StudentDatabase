@@ -28,12 +28,12 @@
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <form:label for="courseCode" path="courseCode">Course Code</form:label>
-                        <form:input path="courseCode" type="text" class="form-control"  placeholder="Enter Course Code" />
+                        <form:label for="courseID" path="courseID">Course Code</form:label>
+                        <form:input path="courseID" type="text" class="form-control" placeholder="Enter Course Code"/>
                     </div>
                     <div class="col-md-6 mb-3">
                         <form:label for="department" path="department">Department</form:label>
-                        <form:input path="department" type="text" class="form-control" placeholder="Enter Department" />
+                        <form:input path="department" type="text" class="form-control" placeholder="Enter Department"/>
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Submit course</button>
