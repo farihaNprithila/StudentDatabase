@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author Prithila
@@ -35,8 +36,15 @@ public class CourseController {
         if (result.hasErrors()) {
             return "error";
         }
-
         courseService.save(course);
+        return "redirect:showcourse";
+    }
+
+    @GetMapping("/showcourse")
+    public String showCourses(Model model) {
+        List<Course> getCourses = courseService.findAllCourses();
+
+        model.addAttribute("courses", getCourses);
         return "course/courseList";
     }
 }

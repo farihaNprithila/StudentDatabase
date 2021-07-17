@@ -12,6 +12,8 @@ import java.util.List;
 
 public interface CourseService {
 
-    Course save(Course course);
+    void save(Course course);
+
+    List<Course> findAllCourses();
 
 }

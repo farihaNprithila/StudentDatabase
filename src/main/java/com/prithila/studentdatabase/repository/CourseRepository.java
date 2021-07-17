@@ -2,6 +2,8 @@ package com.prithila.studentdatabase.repository;
 
 import com.prithila.studentdatabase.model.Course;
 
+import java.util.List;
+
 /**
  * @author Prithila
  * @since 6/26/2021
@@ -9,5 +11,8 @@ import com.prithila.studentdatabase.model.Course;
 
 
 public interface CourseRepository {
-    Course save(Course course);
+    void save(Course course);
+
+    List<Course> findAllCourses();
 }
+
