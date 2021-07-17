@@ -19,25 +19,25 @@
 <body>
     <div class="mt-lg-5 col-md-12" align="center">
         <div class="w-50 p-3 rounded" style="background-color: #eee;">
-            <form method="POST" action="/addcourse" modelAttribute="addCourse">
+            <form:form method="POST" action="/addcourse" modelAttribute="addCourse">
                 <div class="form-row" align="center">
                     <div class="col-md mb-3">
-                        <label for="courseName">Course Name</label>
-                        <input type="text" class="form-control" id="courseName" placeholder="Enter Course Name" required>
+                        <form:label for="courseName" path="courseName">Course Name</form:label>
+                        <form:input path="courseName" type="text" class="form-control" placeholder="Enter Course Name"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="courseID">Course Code</label>
-                        <input type="text" class="form-control" id="courseID" placeholder="Enter Course Code" required>
+                        <form:label for="courseCode" path="courseCode">Course Code</form:label>
+                        <form:input path="courseCode" type="text" class="form-control"  placeholder="Enter Course Code" />
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="department">Department</label>
-                        <input type="text" class="form-control" id="department" placeholder="Enter Department" required>
+                        <form:label for="department" path="department">Department</form:label>
+                        <form:input path="department" type="text" class="form-control" placeholder="Enter Department" />
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Submit course</button>
-            </form>
+            </form:form>
         </div>
     </div>
 </body>
