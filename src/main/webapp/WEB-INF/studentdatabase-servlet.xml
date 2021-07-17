@@ -14,7 +14,6 @@
         http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <mvc:annotation-driven/>
-    <context:annotation-config/>
     <context:component-scan base-package="com.prithila.studentdatabase"/>
     <jpa:repositories base-package="com.prithila.studentdatabase.repository" entity-manager-factory-ref="emFactory"
                       transaction-manager-ref="txManager"/>
@@ -30,15 +29,20 @@
 
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.prithila.studentdatabase.model"/>
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+            <bean
+                    class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true" />
+            </bean>
         </property>
-        <property name="jpaProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="hibernate.dialect"
+                       value="org.hibernate.dialect.MySQLDialect" />
+
+                <entry key="hibernate.hbm2ddl.auto" value="none"></entry>
+                <entry key="hibernate.format_sql" value="true"></entry>
+            </map>
         </property>
     </bean>
 
@@ -47,6 +51,9 @@
     </bean>
 
     <tx:annotation-driven/>
+
+    <bean id="persistenceExceptionTranslationPostProcessor"
+          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
