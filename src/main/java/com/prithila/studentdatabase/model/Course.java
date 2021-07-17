@@ -13,8 +13,12 @@ import java.util.Objects;
 public class Course {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "course_id")
-    private String courseID;
+    private int courseID;
+
+    @Column(name = "course_code")
+    private String courseCode;
 
     @Column(name = "course_name")
     private String courseName;
@@ -26,18 +30,27 @@ public class Course {
     public Course() {
     }
 
-    public Course(String courseID, String courseName, String department) {
+    public Course(int courseID, String courseCode, String courseName, String department) {
         this.courseID = courseID;
+        this.courseCode = courseCode;
         this.courseName = courseName;
         this.department = department;
     }
 
-    public String getCourseID() {
+    public int getCourseID() {
         return courseID;
     }
 
-    public void setCourseID(String courseId) {
-        this.courseID = courseId;
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 
     public String getCourseName() {
@@ -61,7 +74,7 @@ public class Course {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return courseID.equals(course.courseID);
+        return courseID == course.courseID;
     }
 
     @Override
