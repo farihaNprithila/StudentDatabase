@@ -21,9 +21,10 @@ public class CourseRepoitoryImpl implements CourseRepository {
     @Override
     @Transactional
     public Course save(Course course) {
+
         entityManager.persist(course);
         entityManager.flush();
-        entityManager.getTransaction().commit();
+
         return course;
     }
 }
