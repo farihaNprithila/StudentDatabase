@@ -14,27 +14,26 @@
 </nav>
 
 <body>
-
-<div class="p-3" align="center">
-    <h4>Courses</h4>
-    <div class="w-75 p-3 table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Course Code</th>
-                <th scope="col">Course Name</th>
-                <th scope="col">Department</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="p-3" align="center">
+        <h4>Courses</h4>
+        <div class="w-75 p-3 table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Department</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </body>
 </html>
