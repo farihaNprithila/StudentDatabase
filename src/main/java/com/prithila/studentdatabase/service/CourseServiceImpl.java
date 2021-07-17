@@ -3,8 +3,6 @@ package com.prithila.studentdatabase.service;
 import com.prithila.studentdatabase.model.Course;
 import com.prithila.studentdatabase.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,13 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
  */
 
 @Service
-@Scope(proxyMode = ScopedProxyMode.INTERFACES)
 public class CourseServiceImpl implements CourseService {
 
     @Autowired
     CourseRepository courseRepository;
 
     @Override
+    @Transactional
     public Course save(Course course) {
         return courseRepository.save(course);
     }
