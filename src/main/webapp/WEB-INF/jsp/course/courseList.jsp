@@ -1,7 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   @author Prithila
   @since 7/16/2021
 --%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +29,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                </tr>
+                <c:forEach var="course" items="${courses}">
+                    <tr>
+                        <td><c:out value="${course.courseID}"/> </td>
+                        <td><c:out value="${course.courseName}"/> </td>
+                        <td><c:out value="${course.department}"/> </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
