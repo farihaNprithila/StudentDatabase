@@ -1,7 +1,6 @@
 package com.prithila.studentdatabase.model;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,41 +13,31 @@ import java.util.Objects;
 public class Course {
 
     @Id
-    @Column
-    private Long courseId;
+    @Column(name = "course_id")
+    private String courseID;
 
-    @Column
+    @Column(name = "course_name")
     private String courseName;
 
-    @ManyToMany(mappedBy = "courseList")
-    private List<Student> studentList;
+    @Column(name = "department")
+    private String department;
+
 
     public Course() {
-
     }
 
-    public Course(Long courseId, String courseName, List<Student> studentList) {
-        this.courseId = courseId;
+    public Course(String courseID, String courseName, String department) {
+        this.courseID = courseID;
         this.courseName = courseName;
-        this.studentList = studentList;
+        this.department = department;
     }
 
-    public Course(String courseName, List<Student> studentList) {
-        this.courseName = courseName;
-        this.studentList = studentList;
+    public String getCourseID() {
+        return courseID;
     }
 
-    public Course(Long courseId, String courseName) {
-        this.courseId = courseId;
-        this.courseName = courseName;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
+    public void setCourseID(String courseId) {
+        this.courseID = courseId;
     }
 
     public String getCourseName() {
@@ -59,12 +48,12 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public List<Student> getStudentList() {
-        return studentList;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     @Override
@@ -72,11 +61,11 @@ public class Course {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return courseId.equals(course.courseId);
+        return courseID.equals(course.courseID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(courseId);
+        return Objects.hash(courseID);
     }
 }
