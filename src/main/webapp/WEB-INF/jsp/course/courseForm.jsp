@@ -18,24 +18,25 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Add Course</a>
 </nav>
+
 <body>
     <div class="mt-lg-5 col-md-12" align="center">
         <div class="w-50 p-3 rounded" style="background-color: #eee;">
             <form:form method="POST" action="/addcourse" modelAttribute="addCourse">
                 <div class="form-row" align="center">
                     <div class="col-md mb-3">
-                        <form:label for="courseName" path="courseName">Course Name</form:label>
-                        <form:input path="courseName" type="text" class="form-control" placeholder="Enter Course Name"/>
+                        <form:label for="name" path="name">Course Name</form:label>
+                        <form:input path="name" type="text" class="form-control" placeholder="Enter Course Name"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <form:label for="courseID" path="courseID">Course Code</form:label>
-                        <form:input path="courseID" type="text" class="form-control" placeholder="Enter Course Code"/>
+                        <form:label for="id" path="id">Course Code</form:label>
+                        <form:input path="id" type="text" class="form-control" placeholder="Enter Course Code"/>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <form:label for="department" path="department">Department</form:label>
-                        <form:input path="department" type="text" class="form-control" placeholder="Enter Department"/>
+                        <form:label for="departmentID" path="departmentID">Department</form:label>
+                        <form:input path="departmentID" type="number" class="form-control" placeholder="Enter Department"/>
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Submit course</button>

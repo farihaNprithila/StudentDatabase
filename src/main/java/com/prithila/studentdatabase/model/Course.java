@@ -13,49 +13,49 @@ import java.util.Objects;
 public class Course {
 
     @Id
-    @Column(name = "course_id")
-    private String courseID;
+    @Column(name = "id")
+    private String id;
 
 
-    @Column(name = "course_name")
-    private String courseName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "department")
-    private String department;
+    @Column(name = "departmentID")
+    private int departmentID;
 
 
     public Course() {
     }
 
-    public Course(String courseID, String courseName, String department) {
-        this.courseID = courseID;
-        this.courseName = courseName;
-        this.department = department;
+    public Course(String courseID, String name, int departmentID) {
+        this.id = courseID;
+        this.name = name;
+        this.departmentID = departmentID;
     }
 
-    public String getCourseID() {
-        return courseID;
+    public String getId() {
+        return id;
     }
 
-    public void setCourseID(String courseID) {
-        this.courseID = courseID;
+    public void setId(String courseID) {
+        this.id = courseID;
     }
 
 
-    public String getCourseName() {
-        return courseName;
+    public String getName() {
+        return name;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setName(String courseName) {
+        this.name = courseName;
     }
 
-    public String getDepartment() {
-        return department;
+    public int getDepartmentID() {
+        return departmentID;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setDepartmentID(int departmentID) {
+        this.departmentID = departmentID;
     }
 
     @Override
@@ -63,11 +63,11 @@ public class Course {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return courseID == course.courseID;
+        return id == course.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(courseID);
+        return Objects.hash(id);
     }
 }

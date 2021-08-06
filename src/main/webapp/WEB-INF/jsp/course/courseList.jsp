@@ -12,6 +12,7 @@
     <title>Course List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
+
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Course List</a>
 </nav>
@@ -31,9 +32,9 @@
                 <tbody>
                 <c:forEach var="course" items="${courses}">
                     <tr>
-                        <td><c:out value="${course.courseID}"/> </td>
-                        <td><c:out value="${course.courseName}"/> </td>
-                        <td><c:out value="${course.department}"/> </td>
+                        <td><c:out value="${course.id}"/> </td>
+                        <td><c:out value="${course.name}"/> </td>
+                        <td><c:out value="${course.departmentID}"/> </td>
                     </tr>
                 </c:forEach>
                 </tbody>
