@@ -14,7 +14,11 @@ public interface CourseService {
 
     void save(Course course);
 
+    void update(Course course);
+
     void delete(String id);
+
+    Course findCourse(String id);
 
     List<Course> findAllCourses();
 

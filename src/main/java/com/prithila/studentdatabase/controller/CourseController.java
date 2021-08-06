@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -32,25 +29,39 @@ public class CourseController {
     }
 
     @PostMapping("/addcourse")
-    public String addCourse(@Valid @ModelAttribute("addCourse") Course course, BindingResult result) {
+    public String addCourse(@RequestParam("task") String task, @Valid @ModelAttribute("addCourse") Course course, BindingResult result) {
 
         if (result.hasErrors()) {
             return "error";
         }
-        courseService.save(course);
+
+        if (task.equals("add")) {
+            courseService.save(course);
+        } else if (task.equals("update")) {
+            courseService.update(course);
+        }
+
         return "redirect:/showcourse";
     }
 
     @GetMapping("/showcourse")
     public String showCourses(Model model) {
         List<Course> getCourses = courseService.findAllCourses();
-
         model.addAttribute("courses", getCourses);
+
         return "course/courseList";
     }
 
+    @GetMapping("/editcourse/{id}")
+    public String updateCourse(@PathVariable("id") String id, Model model) {
+        Course course = courseService.findCourse(id);
+        model.addAttribute("course", course);
+
+        return "forward:/addcourse";
+    }
+
     @GetMapping("/deletecourse/{id}")
-    public String deleteCourse(@PathVariable("id") String id, Model model) {
+    public String deleteCourse(@PathVariable("id") String id) {
         courseService.delete(id);
         return "redirect:/showcourse";
     }

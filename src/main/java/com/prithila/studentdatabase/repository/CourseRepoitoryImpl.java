@@ -21,10 +21,14 @@ public class CourseRepoitoryImpl implements CourseRepository {
 
     @Override
     public void save(Course course) {
-
         entityManager.persist(course);
         entityManager.flush();
+    }
 
+    @Override
+    public void update(Course course) {
+        entityManager.merge(course);
+        entityManager.flush();
     }
 
     @Override
@@ -34,6 +38,11 @@ public class CourseRepoitoryImpl implements CourseRepository {
         entityManager.remove(course);
         entityManager.flush();
         entityManager.clear();
+    }
+
+    @Override
+    public Course findCourse(String id) {
+        return entityManager.find(Course.class, id);
     }
 
     @Override

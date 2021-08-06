@@ -20,39 +20,40 @@
 </nav>
 
 <body>
-<div class="p-3" align="center">
-    <h4>Courses</h4>
-    <div class="w-75 p-3 table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Course Code</th>
-                <th scope="col">Course Name</th>
-                <th scope="col">Department</th>
-                <th scope="col">Date Added</th>
-                <th scope="col">Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach var="course" items="${courses}" varStatus="status">
+    <div class="p-3" align="center">
+        <h4>Courses</h4>
+        <div class="w-75 p-3 table-responsive">
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td><c:out value="${course.id}"/></td>
-                    <td><c:out value="${course.name}"/></td>
-                    <td><c:out value="${course.departmentID}"/></td>
-                    <td><c:out value="${course.creationDate}"/></td>
-                    <td>
-                        <a href="edit?id=<c:out value='${user.id}' />">
-                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="<c:url value='/deletecourse/${courses[status.index].id}' />">
-                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                        </a>
-                    </td>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col">Action</th>
                 </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <c:forEach var="course" items="${courses}" varStatus="status">
+                    <tr>
+                        <td><c:out value="${course.id}"/></td>
+                        <td><c:out value="${course.name}"/></td>
+                        <td><c:out value="${course.departmentID}"/></td>
+                        <td><c:out value="${course.creationDate}"/></td>
+                        <td>
+                            <a class="btn btn-success" href="<c:url value='/editcourse/${courses[status.index].id}' />"><i
+                                    class="fas fa-edit"></i></button>
+                            </a> &nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-danger" href="<c:url value='/deletecourse/${courses[status.index].id}' />"><i
+                                    class="far fa-trash-alt"></i></button>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+            <a class="btn btn-primary float-left" href="/addcourse">Add New Course</a>
+        </div>
     </div>
-</div>
 </body>
 </html>
