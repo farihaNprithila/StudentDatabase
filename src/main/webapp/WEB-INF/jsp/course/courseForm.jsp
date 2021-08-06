@@ -35,7 +35,7 @@
                         <form:input path="id" type="text" class="form-control" placeholder="Enter Course Code"/>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <form:label for="departmentID" path="departmentID">Department</form:label>
+                        <form:label for="departmentID" path="departmentID">Department ID</form:label>
                         <form:input path="departmentID" type="number" class="form-control" placeholder="Enter Department"/>
                     </div>
                 </div>
