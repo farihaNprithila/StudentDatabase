@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <title>Course List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
 <nav class="navbar navbar-dark bg-dark">
@@ -27,6 +28,8 @@
                     <th scope="col">Course Code</th>
                     <th scope="col">Course Name</th>
                     <th scope="col">Department</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,6 +38,10 @@
                         <td><c:out value="${course.id}"/> </td>
                         <td><c:out value="${course.name}"/> </td>
                         <td><c:out value="${course.departmentID}"/> </td>
+                        <td>
+                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
