@@ -27,6 +27,12 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    @Transactional(transactionManager = "txManager")
+    public void delete(String id) {
+        courseRepository.delete(id);
+    }
+
+    @Override
     public List<Course> findAllCourses() {
         return courseRepository.findAllCourses();
     }

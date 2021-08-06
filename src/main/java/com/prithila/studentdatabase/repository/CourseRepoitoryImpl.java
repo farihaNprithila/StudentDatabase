@@ -28,6 +28,15 @@ public class CourseRepoitoryImpl implements CourseRepository {
     }
 
     @Override
+    public void delete(String id) {
+        Course course = entityManager.find(Course.class, id);
+
+        entityManager.remove(course);
+        entityManager.flush();
+        entityManager.clear();
+    }
+
+    @Override
     public List<Course> findAllCourses() {
         Query query = entityManager.createQuery("Select c from Course c");
         List<Course> courseList = query.getResultList();

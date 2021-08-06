@@ -14,6 +14,8 @@ public interface CourseService {
 
     void save(Course course);
 
+    void delete(String id);
+
     List<Course> findAllCourses();
 
 }

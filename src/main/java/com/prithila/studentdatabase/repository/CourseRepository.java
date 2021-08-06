@@ -13,6 +13,8 @@ import java.util.List;
 public interface CourseRepository {
     void save(Course course);
 
+    void delete(String id);
+
     List<Course> findAllCourses();
 }
 

@@ -34,15 +34,19 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="course" items="${courses}">
+            <c:forEach var="course" items="${courses}" varStatus="status">
                 <tr>
                     <td><c:out value="${course.id}"/></td>
                     <td><c:out value="${course.name}"/></td>
                     <td><c:out value="${course.departmentID}"/></td>
                     <td><c:out value="${course.creationDate}"/></td>
                     <td>
-                        <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        <a href="edit?id=<c:out value='${user.id}' />">
+                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="<c:url value='/deletecourse/${courses[status.index].id}' />">
+                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        </a>
                     </td>
                 </tr>
             </c:forEach>
