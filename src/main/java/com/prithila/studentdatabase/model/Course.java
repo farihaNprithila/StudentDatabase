@@ -1,6 +1,7 @@
 package com.prithila.studentdatabase.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -20,15 +21,19 @@ public class Course {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "departmentID")
+    @Column(name = "departmentid")
     private int departmentID;
 
+
+    @Temporal(value = TemporalType.DATE)
+    @Column(name = "creationdate")
+    private Date creationDate = new Date();
 
     public Course() {
     }
 
-    public Course(String courseID, String name, int departmentID) {
-        this.id = courseID;
+    public Course(String id, String name, int departmentID) {
+        this.id = id;
         this.name = name;
         this.departmentID = departmentID;
     }
@@ -56,6 +61,14 @@ public class Course {
 
     public void setDepartmentID(int departmentID) {
         this.departmentID = departmentID;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date dateAdded) {
+        this.creationDate = dateAdded;
     }
 
     @Override
