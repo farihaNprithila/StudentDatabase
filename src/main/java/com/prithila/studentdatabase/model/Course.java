@@ -14,25 +14,25 @@ import java.util.Objects;
 public class Course {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private String id;
 
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "departmentid")
-    private int departmentID;
+    @Column(name = "department_id")
+    private String departmentID;
 
 
     @Temporal(value = TemporalType.DATE)
-    @Column(name = "creationdate")
+    @Column(name = "creation_date")
     private Date creationDate = new Date();
 
     public Course() {
     }
 
-    public Course(String id, String name, int departmentID) {
+    public Course(String id, String name, String departmentID) {
         this.id = id;
         this.name = name;
         this.departmentID = departmentID;
@@ -55,11 +55,11 @@ public class Course {
         this.name = courseName;
     }
 
-    public int getDepartmentID() {
+    public String getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(int departmentID) {
+    public void setDepartmentID(String departmentID) {
         this.departmentID = departmentID;
     }
 
