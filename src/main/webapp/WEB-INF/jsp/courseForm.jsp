@@ -36,7 +36,7 @@
                             <div class="col-md-6 mb-3">
                                 <form:label for="id" path="id">Course Code</form:label>
                                 <form:input path="id" type="text" class="form-control" placeholder="Enter Course Code"
-                                            value="${course.id}"/>
+                                            value="${course.id}" readonly="true"/>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <form:label for="departmentID" path="departmentID">Department ID</form:label>
