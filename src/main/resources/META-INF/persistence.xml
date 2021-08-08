@@ -1,6 +1,16 @@
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-             version="2.0">
-    <persistence-unit name="punit"></persistence-unit>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="hibernate">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.prithila.studentdatabase.model.Course</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/studentdatabase"/>
+            <property name="javax.persistence.jdbc.user" value="prithila"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+        </properties>
+    </persistence-unit>
 </persistence>
